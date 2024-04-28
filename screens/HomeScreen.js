@@ -89,7 +89,7 @@ const HomeScreen = () => {
             <MagnifyingGlassIcon size='25' color='white' />
         </TouchableOpacity>
     </View>
-    {showsearch && locations.length > 0 ? (
+    {locations.length > 0 && showsearch? (
         <View className='absolute w-full bg-gray-300 top-16 rounded-3xl'>
             {
                 locations.map((loc, index) => {
@@ -140,7 +140,7 @@ const HomeScreen = () => {
             </View>
             <View className="flex-row space-x-2 items-center">
                 <Image source={require('../assets/icons/sun.png')} className="h-6 w-6"/>
-                <Text className="text-white font-semibold text-base">6:05 AM</Text>
+                <Text className="text-white font-semibold text-base">{weather?.forecast?.forecastday[0]?.astro?.sunrise}</Text>
             </View>
         </View>
       </View>
